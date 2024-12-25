@@ -8,7 +8,7 @@ Prerequisites:
 - Python 3.9+
 - `uv`
 - Databricks CLI
-- Databricks workspace
+- Databricks workspace with Unity Catalog and Serverless enabled
 
 Steps:
 1. Clone the repository
