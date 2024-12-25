@@ -1,16 +1,18 @@
 [project]
 name = "dabs-with-uv"
 dynamic = ["version"]
-description = "Add your description here"
+description = "Example project with Databicks Asset Bundles and uv"
 readme = "README.md"
 authors = [
     { name = "renardeinside", email = "polarpersonal@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "pydantic>=2.10.4",
+]
 
 [project.scripts]
-dabs-with-uv = "dabs_with_uv:main"
+aggregator = "dabs_with_uv.aggregator:entrypoint"
 
 [build-system]
 requires = ["hatchling", "hatch-vcs"]
@@ -18,8 +20,10 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "delta-spark>=3.2.1",
-    "pyspark>=3.5.4",
+    "databricks-connect<16",
+    "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
+    "ruff>=0.8.4",
 ]
 
 [tool.hatch.version]
